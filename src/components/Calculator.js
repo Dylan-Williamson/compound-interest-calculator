@@ -6,9 +6,9 @@ class Calculator extends Component {
 
         this.state = {
             count: 0,
-            initial: '',
-            rate: '',
-            goal: '',
+            initial: 0,
+            rate: 0,
+            goal: 0,
             calculated: 0
         };
 
@@ -19,27 +19,27 @@ class Calculator extends Component {
     };
 
     handleInitialChange = (e) => {
-        const value = e.target.value;
+        const value = parseInt(e.target.value);
         this.setState({ initial: value })
     }
 
     handleRateChange = (e) => {
-        const value = e.target.value;
+        const value = parseInt(e.target.value);
         this.setState({ rate: value })
     }
 
     handleGoalChange = (e) => {
-        const value = e.target.value;
+        const value = parseInt(e.target.value);
         this.setState({ goal: value })
     }
 
     calculate = () => {
         let count = 0;
-        let initial = this.state.initial;
+        let initial = parseInt(this.state.initial);
         let sum = initial;
-        let rate = (this.state.rate/100);
+        let rate = parseInt(this.state.rate)/100;
         let trueRate = (rate+1)
-        let goal = this.state.goal;
+        let goal = parseInt(this.state.goal);
 
         while (sum < goal) {
             count ++; // 1
