@@ -7,7 +7,7 @@ class Calculator extends Component {
         this.state = {
             count: 0,
             initial: 0,
-            rate: 0,
+            rate: 10,
             goal: 0,
             calculated: 0
         };
